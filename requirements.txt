@@ -1,0 +1,11 @@
+# Minimal Python dependencies for ParallelFileAnalyzer
+# Tested on Python 3.9+ (3.10/3.11 recommended)
+
+# Core libraries used by modules
+# mpi4py is optional; required only if you intend to run the MPI example (analyze_mpi.py)
+mpi4py==4.1.0
+
+# (Optional) useful for plotting/benching if you add plots later
+matplotlib>=3.4.0
+numpy>=1.26.0
+pandas>=2.2.0
