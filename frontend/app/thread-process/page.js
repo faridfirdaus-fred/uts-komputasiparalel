@@ -60,7 +60,7 @@ export default function ThreadProcessPage() {
   };
 
   const presets = [
-    { name: '1. Baseline (NIM 237006081)', io_workers: 3, cpu_workers: 2, limit_data: 810 },
+    { name: '1. Baseline (NPM 237006081)', io_workers: 3, cpu_workers: 2, limit_data: 810 },
     { name: '2. Thread Heavy (16 threads)', io_workers: 16, cpu_workers: 2, limit_data: 810 },
     { name: '3. Process Heavy (16 workers)', io_workers: 2, cpu_workers: 16, limit_data: 810 },
     { name: '4. Balanced (8/8)', io_workers: 8, cpu_workers: 8, limit_data: 810 },
