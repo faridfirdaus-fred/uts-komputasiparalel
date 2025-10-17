@@ -77,7 +77,7 @@ export default function MPIPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-3xl font-bold text-gray-900">
+        <h1 className="text-3xl font-bold text-gray-100">
           🌐 MPI + ProcessPool Analysis
         </h1>
         <div className="flex items-center space-x-4">
