@@ -300,7 +300,7 @@ export default function ThreadProcessPage() {
 
             {!loading && !error && !result && (
               <div className="text-center py-12 text-gray-500">
-                <p className="text-lg">Configure your analysis and click "Start Analysis" to begin.</p>
+                <p className="text-lg">Configure your analysis and click &quot;Start Analysis&quot; to begin.</p>
               </div>
             )}
           </div>

@@ -263,7 +263,7 @@ export default function ComparisonPage() {
       {!loading && results.length === 0 && (
         <div className="bg-white rounded-xl shadow-lg p-12 text-center">
           <p className="text-lg text-gray-500">
-            Select a benchmark type and click "Start Benchmark" to begin performance comparison.
+            Select a benchmark type and click &quot;Start Benchmark&quot; to begin performance comparison.
           </p>
         </div>
       )}
