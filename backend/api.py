@@ -170,9 +170,10 @@ async def analyze_mpi(request: MPIRequest):
     Run MPI + ProcessPool analysis
     """
     try:
-        # Build command
+        # Build command with --oversubscribe flag to allow more processes than available cores
         cmd = [
             "mpiexec",
+            "--oversubscribe",
             "-n", str(request.mpi_ranks),
             PYTHON_CMD,
             str(ANALYZE_MPI_SCRIPT),
@@ -188,6 +189,7 @@ async def analyze_mpi(request: MPIRequest):
         if request.nim:
             cmd = [
                 "mpiexec",
+                "--oversubscribe",
                 "-n", str(request.mpi_ranks),
                 PYTHON_CMD,
                 str(ANALYZE_MPI_SCRIPT),
@@ -353,8 +355,8 @@ def get_presets():
         "mpi": [
             {"name": "1. Baseline (4 ranks)", "mpi_ranks": 4, "nim": "237006081", "io_workers": 3, "cpu_workers": 2, "limit_data": 810},
             {"name": "2. Minimal (2 ranks)", "mpi_ranks": 2, "io_workers": 4, "cpu_workers": 4, "limit_data": 810},
-            {"name": "3. High Scale (8 ranks)", "mpi_ranks": 8, "io_workers": 2, "cpu_workers": 2, "limit_data": 810},
-            {"name": "4. Ultra Scale (16 ranks)", "mpi_ranks": 16, "io_workers": 2, "cpu_workers": 2, "limit_data": 810},
+            {"name": "3. Medium Scale (6 ranks)", "mpi_ranks": 6, "io_workers": 3, "cpu_workers": 3, "limit_data": 810},
+            {"name": "4. High Scale (8 ranks)", "mpi_ranks": 8, "io_workers": 2, "cpu_workers": 2, "limit_data": 810},
             {"name": "5. Balanced (4/6/6)", "mpi_ranks": 4, "io_workers": 6, "cpu_workers": 6, "limit_data": 810},
             {"name": "6. High Parallelism (4/8/4)", "mpi_ranks": 4, "io_workers": 8, "cpu_workers": 4, "limit_data": 810},
             {"name": "7. CPU Heavy (4/2/8)", "mpi_ranks": 4, "io_workers": 2, "cpu_workers": 8, "limit_data": 810},
