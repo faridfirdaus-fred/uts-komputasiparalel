@@ -5,6 +5,12 @@
 # mpi4py is optional; required only if you intend to run the MPI example (analyze_mpi.py)
 mpi4py==4.1.0
 
+# FastAPI Backend for Web GUI
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.0.0
+python-multipart>=0.0.6
+
 # (Optional) useful for plotting/benching if you add plots later
 matplotlib>=3.4.0
 numpy>=1.26.0

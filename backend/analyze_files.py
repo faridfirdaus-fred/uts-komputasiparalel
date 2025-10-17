@@ -194,7 +194,7 @@ if __name__ == '__main__':
     if args.mpi:
         try:
             # import the MPI runner and call its main()
-            import analyze_mpi
+            import backend.analyze_mpi as analyze_mpi
             analyze_mpi.main()
             sys.exit(0)
         except Exception as e:

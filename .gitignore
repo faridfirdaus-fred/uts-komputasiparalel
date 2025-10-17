@@ -1,7 +1,4 @@
 ./history
+/history
+history
 .history
-# Python virtual environment
-.venv/
-venv/
-__pycache__/
-*.pyc

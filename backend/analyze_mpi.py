@@ -123,7 +123,31 @@ def main():
         overall_top = global_words.most_common(1)
         top_str = f"'{overall_top[0][0]}' (count: {overall_top[0][1]})" if overall_top else "n/a"
 
+        # Run sequential baseline for speedup calculation
+        print("\nRunning sequential baseline for speedup calculation...")
+        if args.limit_data:
+            all_files = list_text_files(args.folder)[:args.limit_data]
+        else:
+            all_files = list_text_files(args.folder)
+        
+        seq_start = time.perf_counter()
+        if args.detailed:
+            analyzer = detailed_analyze_text
+        else:
+            analyzer = analyze_text
+        
+        for f in all_files:
+            try:
+                text = read_file(f)
+                analyzer(text)
+            except:
+                pass
+        seq_time = time.perf_counter() - seq_start
+
         throughput = total_files / total_time if total_time > 0 else 0
+        speedup = seq_time / total_time if total_time > 0 else 0
+        total_workers = size * args.cpu_workers
+        efficiency = speedup / total_workers if total_workers > 0 else 0
 
         print("\n=== MPI Hybrid Analysis Results ===")
         print(f"Ranks: {size}")
@@ -131,8 +155,11 @@ def main():
         print(f"CPU Processes per Rank: {args.cpu_workers}")
         print(f"Total files processed: {total_files}")
         print(f"Top word: {top_str}")
+        print(f"Sequential time: {seq_time:.3f}s")
         print(f"Parallel wall time: {total_time:.3f}s")
+        print(f"Speedup: {speedup:.2f}x")
         print(f"Throughput: {throughput:.2f} files/s")
+        print(f"Efficiency: {efficiency:.3f}")
         print("===============================")
 
 
