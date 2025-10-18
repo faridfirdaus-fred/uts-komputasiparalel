@@ -60,16 +60,16 @@ export default function ThreadProcessPage() {
   };
 
   const presets = [
-    { name: '1. Baseline (NPM 237006081)', io_workers: 3, cpu_workers: 2, limit_data: 810 },
-    { name: '2. Thread Heavy (16 threads)', io_workers: 16, cpu_workers: 2, limit_data: 810 },
-    { name: '3. Process Heavy (16 workers)', io_workers: 2, cpu_workers: 16, limit_data: 810 },
+    { name: '1. Baseline (NIM 237006081)', io_workers: 3, cpu_workers: 2, limit_data: 810 },
+    { name: '2. Light (2/2)', io_workers: 2, cpu_workers: 2, limit_data: 810 },
+    { name: '3. Medium (4/4)', io_workers: 4, cpu_workers: 4, limit_data: 810 },
     { name: '4. Balanced (8/8)', io_workers: 8, cpu_workers: 8, limit_data: 810 },
-    { name: '5. High Parallelism', io_workers: 12, cpu_workers: 12, limit_data: 810 },
-    { name: '6. I/O Focused', io_workers: 20, cpu_workers: 4, limit_data: 810 },
-    { name: '7. CPU Focused', io_workers: 4, cpu_workers: 20, limit_data: 810 },
-    { name: '8. Medium Load', io_workers: 6, cpu_workers: 6, limit_data: 500 },
-    { name: '9. Light Load', io_workers: 4, cpu_workers: 4, limit_data: 200 },
-    { name: '10. Quick Test (100 files)', io_workers: 2, cpu_workers: 2, limit_data: 100 },
+    { name: '5. I/O Heavy (16/4)', io_workers: 16, cpu_workers: 4, limit_data: 810 },
+    { name: '6. CPU Heavy (4/16)', io_workers: 4, cpu_workers: 16, limit_data: 810 },
+    { name: '7. High Parallelism (12/12)', io_workers: 12, cpu_workers: 12, limit_data: 810 },
+    { name: '8. Test 500 files (6/6)', io_workers: 6, cpu_workers: 6, limit_data: 500 },
+    { name: '9. Test 200 files (4/4)', io_workers: 4, cpu_workers: 4, limit_data: 200 },
+    { name: '10. Quick Test 100 files', io_workers: 2, cpu_workers: 2, limit_data: 100 },
   ];
 
   return (

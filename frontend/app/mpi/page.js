@@ -62,16 +62,16 @@ export default function MPIPage() {
   };
 
   const presets = [
-    { name: '1. Baseline (4 ranks)', mpi_ranks: 4, io_workers: 3, cpu_workers: 2, limit_data: 810 },
-    { name: '2. Minimal (2 ranks)', mpi_ranks: 2, io_workers: 4, cpu_workers: 4, limit_data: 810 },
-    { name: '3. Medium Scale (6 ranks)', mpi_ranks: 6, io_workers: 3, cpu_workers: 3, limit_data: 810 },
-    { name: '4. High Scale (8 ranks)', mpi_ranks: 8, io_workers: 2, cpu_workers: 2, limit_data: 810 },
-    { name: '5. Balanced (4/6/6)', mpi_ranks: 4, io_workers: 6, cpu_workers: 6, limit_data: 810 },
-    { name: '6. High Parallelism (4/8/4)', mpi_ranks: 4, io_workers: 8, cpu_workers: 4, limit_data: 810 },
-    { name: '7. CPU Heavy (4/2/8)', mpi_ranks: 4, io_workers: 2, cpu_workers: 8, limit_data: 810 },
-    { name: '8. Medium Test (4 ranks/500)', mpi_ranks: 4, io_workers: 4, cpu_workers: 4, limit_data: 500 },
-    { name: '9. Light Test (2 ranks/200)', mpi_ranks: 2, io_workers: 3, cpu_workers: 3, limit_data: 200 },
-    { name: '10. Quick Test (2 ranks/100)', mpi_ranks: 2, io_workers: 2, cpu_workers: 2, limit_data: 100 },
+    { name: '1. Baseline (NIM 237006081)', mpi_ranks: 4, io_workers: 3, cpu_workers: 2, limit_data: 810 },
+    { name: '2. Light (2r/2/2)', mpi_ranks: 2, io_workers: 2, cpu_workers: 2, limit_data: 810 },
+    { name: '3. Medium (4r/4/4)', mpi_ranks: 4, io_workers: 4, cpu_workers: 4, limit_data: 810 },
+    { name: '4. Balanced (4r/8/8)', mpi_ranks: 4, io_workers: 8, cpu_workers: 8, limit_data: 810 },
+    { name: '5. I/O Heavy (2r/16/4)', mpi_ranks: 2, io_workers: 16, cpu_workers: 4, limit_data: 810 },
+    { name: '6. CPU Heavy (2r/4/16)', mpi_ranks: 2, io_workers: 4, cpu_workers: 16, limit_data: 810 },
+    { name: '7. High Parallelism (8r/12/12)', mpi_ranks: 8, io_workers: 12, cpu_workers: 12, limit_data: 810 },
+    { name: '8. Test 500 files (4r/6/6)', mpi_ranks: 4, io_workers: 6, cpu_workers: 6, limit_data: 500 },
+    { name: '9. Test 200 files (2r/4/4)', mpi_ranks: 2, io_workers: 4, cpu_workers: 4, limit_data: 200 },
+    { name: '10. Quick Test 100 files', mpi_ranks: 2, io_workers: 2, cpu_workers: 2, limit_data: 100 },
   ];
 
   return (
